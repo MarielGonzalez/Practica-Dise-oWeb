@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ejercicio 15</title>
+
+    <style>
+        #name {
+            color: aqua;
+        }
+        
+        #lastname {
+            width: 100px;
+        }
+        
+        input[type="text"] {
+            min-width: 100px;
+            padding: 0.3em;
+            font-size: 1em;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+        
+        #field-form {
+            margin-left: 1%;
+            padding-left: 10;
+            padding-right: 100;
+            width: 80%;
+        }
+        
+        form {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Formulario con controles de varios tipos</h1>
+    <h2>Rellena tu CV</h2>
+    <fieldset id="field-form">
+        <legend>Datos Personales</legend>
+
+        <form action="/insertar_cv.php" method="post">
+            <label for="fname">Provincia</label><br>
+            <select name="Provincia" id="Provincia" class="form-select" aria-label="Default select example">
+                <option>-Seleccionar-</option>
+                <option>Santo Domingo</option>
+                <option>Distrito Nacional</option>
+                <option>Santiago</option>
+                <option>San Cristóbal</option>
+                <option>La Vega</option>
+                <option>Puerto Plata</option>
+                <option>San Pedro de Macorís</option>
+                <option>Duarte</option>
+                <option>La Altagracia</option>
+                <option>La Romana</option>
+                <option>San Juan</option>
+                <option>Espaillat</option>
+                <option>Azua</option>
+                <option>Barahona</option>
+                <option>Monte Plata</option>
+                <option>Peravia</option>
+                <option>Monseñor Nouel</option>
+                <option>Valverde</option>
+                <option>Sánchez Ramírez</option>
+                <option>María Trinidad Sánchez</option>
+                <option>Montecristi</option>
+                <option>Samaná</option>
+                <option>Bahoruco</option>
+                <option>Hermanas Mirabal</option>
+                <option>El Seibo</option>
+                <option>Hato Mayor</option>
+                <option>Dajabón</option>
+                <option>Elías Piña</option>
+                <option>San José de Ocoa</option>
+                <option>Santiago Rodríguez</option>
+                <option>Independencia</option>
+                <option>Pedernales</option>
+
+            </select>
+            <br><br>
+
+            <label for="lname">Fecha de nacimiento</label><br>
+
+            <input type="number" id="dia" name="dia" pattern="[0-9]{2}" min="0" max="31"> de
+            <select name="mes" id="mes">
+            <option value="Enero">Enero</option>
+            <option value="Febrero">Febrero</option>
+            <option value="Marzo">Marzo</option>
+            <option value="Abril">Abril</option>
+            <option value="Mayo">Mayo</option>
+            <option value="Junio">Junio</option>
+            <option value="Julio">Julio</option>
+            <option value="Agosto">Agosto</option>
+            <option value="September">September</option>
+            <option value="Octubre">Octubre</option>
+            <option value="Noviembre">Noviembre</option>
+            <option value="Diciembre">Diciembre</option>
+            </select> de
+
+            <input type="number" id="dia" name="dia" pattern="[0-9]{2}" min="0" max="31">
+
+
+            <!--TAMBIEN PUDE HABER USADO ESTE, PERO POR MOTIVOS DE CUMPLIR CON EL ESQUEMA DEL EJERCICIO
+             <input type="date" id="birthday" name="birthday">--><br><br>
+
+            <label for="lname">Tema de Interes</label><br>
+
+            <select name="mes" id="mes" multiple>
+             <option value="Enero">Administracion de base de datos</option>
+             <option value="Febrero">Analisis y programacion </option>
+             <option value="Marzo">Arquitectura</option>
+             <option value="Abril">Calidad</option>
+             <option value="Mayo">ERP, CRM,Business Intelligence</option>
+             <option value="Junio">Diseño Grafico</option>
+             <option value="Julio">Contabilidad Computarizada</option>
+             <option value="Agosto">Ciberseguridad</option>
+            
+            
+        </form>
+    </fieldset>
+</body>
+
+</html>

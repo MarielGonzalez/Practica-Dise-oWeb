@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+
+    <style>
+        #name {
+            color: aqua;
+        }
+        
+        #lastname {
+            width: 100px;
+        }
+        
+        input[type="text"] {
+            min-width: 100px;
+            padding: 0.3em;
+            font-size: 1em;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Formulario con controles de varios tipos</h1>
+    <h2>Rellena tu CV</h2>
+
+    <form action="/insertar_cv.php">
+        <label for="fname">Nombre:</label><br>
+        <input type="text" id="name" name="fname" value="" maxlength="30" placeholder="Introduzca su Nombre"><br><br>
+
+        <label for="lname">Apellidos:</label><br>
+        <input type="text" id="lastname" name="lname" value="" maxlength="80" placeholder="Introduzca sus Apellidos"><br><br>
+
+        <label for="lname">Contraseña:</label><br>
+        <input type="password" id="pass" name="lname" value="" maxlength="10" placeholder="Introduzca su Contraseña" pattern=".{6,}" title="Debe ingresar de 6 a 10 caracteres"><br><br>
+
+        <label for="lname">DNI:</label><br>
+        <input type="text" id="lname" name="lname" value="" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}"><br><br>
+
+        <label for="foto">Incluir mi foto</label> <input type="file" style="visibility: hidden;"> <br>
+
+        <br><label for="lname">Sexo:</label><br>
+
+        <input type="radio" id="masculino" name="Sexo" value="masculino" checked>
+        <label for="Hombre">Hombre</label><br>
+        <input type="radio" id="femenino" name="Sexo" value="femenino">
+        <label for="Mujer">Mujer</label><br>
+        <br>
+
+        <input type="checkbox" id="boletin" checked>
+        <labe for="boletin">Suscribirme al boletin de novedades</label> <br>
+
+            <br><input type="submit" value="Enviar datos Introducidos"> <input type="submit" value="Borrar los datos introducidos">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="text"] {
+            min-width: 100px;
+            padding: 0.3em;
+            font-size: 1em;
+            margin-top: 2%;
+            border-radius: 3px;
+        }
+        
+        input[type="submit"] {
+            padding: 0.5em;
+            font-size: 1em;
+        }
+        
+        #field-form {
+            margin-left: 1%;
+            padding-left: 10;
+            padding-right: 100;
+            width: 80%;
+        }
+        
+        form {
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <fieldset id="field-form">
+        <legend>Datos basicos</legend>
+
+        <form action="/insertar_cv.php" method="post">
+            <label for="fname">Nombre</label><br>
+            <input type="text">
+            <label for="fname">Descripcion</label><br>
+            <input type="text">
+            <label for="fname">Descripcion</label> <input type="file">
+            <br> <input type="checkbox"><label for="fname">Añadir contador de visitas</label>
+
+
+
+        </form>
+    </fieldset>
+    <fieldset id="field-form">
+
+        <legend>Datos Economicos</legend>
+
+        <form action="/insertar_cv.php" method="post">
+            <label for="fname">Precio</label> <input type="number" min="0"> <span>€</span> <label for="fname">Impuesto</label> <select name="impuesto" id="impuesto">
+                <option value="0.04">4%</option>
+                <option value="0.07">7%</option>
+                <option value="0.16">16%</option>
+                <option value="0.25">25%</option>
+            </select>
+            <label for="fname">Promocion</label> <br>
+            <input type="radio" id="ningumo" name="ninguno" value="ninguno" checked>
+            <label for="ninguno">Ninguno</label><br>
+            <input type="radio" id="Transporte gratuito" name="ransporte gratuito" value="ransporte gratuito">
+            <label for="Transporte gratuito">Transporte gratuito</label><br>
+            <input type="radio" id="descuento5%" name="descuento5" value="descuento5">
+            <label for="Transporte gratuito">Descuento 5%</label><br>
+
+
+
+
+        </form>
+    </fieldset>
+
+</body>
+
+</html>
