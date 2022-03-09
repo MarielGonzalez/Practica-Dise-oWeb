@@ -6,36 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 14</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
 
     <style>
-        #name {
-            color: aqua;
-        }
-        
-        #lastname {
-            width: 100px;
-        }
-        
         input[type="text"] {
             min-width: 100px;
-            padding: 0.3em;
+            padding: 0.5em;
             font-size: 1em;
+            border-radius: 0px;
+            width: 300px;
+            padding: 0em;
+            font-size: 1em;
+            --margin-top: 1%;
             border-radius: 3px;
         }
         
-        input[type="submit"] {
+        input[type="submit"] input[type="reset"] {
             padding: 0.5em;
             font-size: 1em;
         }
         
-        input:valid,
-        textarea:valid {
-            background: green;
+        #field-form {
+            margin-left: 2%;
+            padding-left: 10;
+            padding-right: 100;
+            width: 80%;
         }
         
-        input:invalid,
-        textarea:invalid {
-            background: red;
+        input[type="password"] {
+            padding: 0.5em;
+            font-size: 1em;
+            width: 25%;
+        }
+        
+        form {
+            width: 100%;
+        }
+        
+        #desc {
+            padding: 0em;
+            font-size: 1em;
+            width: 30em;
+            height: 5em;
+            overflow-y: scroll;
+        }
+        
+        legend {
+            font-size: medium;
+        }
+        
+        #field-foto {
+            width: 50%;
         }
     </style>
 
@@ -45,21 +67,24 @@
     <h1>Formulario con controles de varios tipos</h1>
     <h2>Rellena tu CV</h2>
 
-    <form action="/insertar_cv.php">
+    <form action="/insertar_cv.php" id="field-form" method="post">
         <label for="fname">Nombre:</label><br>
-        <input type="text" id="name" name="fname" value="" maxlength="30" placeholder="Introduzca su Nombre"><br><br>
+        <input type="text" id="name" name="fname" value="" maxlength="30" placeholder="Introduzca su Nombre" autocapitalize="words" autocomplete="name" autofocus required><br><br>
 
         <label for="lname">Apellidos:</label><br>
-        <input type="text" id="lastname" name="lname" value="" maxlength="80" placeholder="Introduzca sus Apellidos"><br><br>
+        <input type="text" id="lastname" name="lname" value="" maxlength="80" placeholder="Introduzca sus Apellidos" autocapitalize="words" autocomplete="family-name" required><br><br>
 
-        <label for="lname">Contraseña:</label><br>
-        <input type="password" id="pass" name="lname" value="" maxlength="10" placeholder="Introduzca su Contraseña" pattern=".{6,}" title="Debe ingresar de 6 a 10 caracteres"><br><br>
+        <label for="pss">Contraseña:</label><br>
+        <input type="password" id="pass" name="pss" value="" maxlength="10" placeholder="Introduzca su Contraseña" pattern="{10,}" title="Debe ingresar de 6 a 10 caracteres"><br><br>
 
         <label for="lname">DNI:</label><br>
-        <input type="text" id="lname" name="lname" value="" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" required><br><br>
+        <input type="text" id="dni" name="dni" value="" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Z]{1}" title="Debe ingresar de 8 numeros y una letra" required><br><br>
 
         <label for="foto">Incluir mi foto</label> <input type="file" style="visibility: hidden;"> <br>
-
+        <div class="custom-file" id="field-foto">
+            <input type="file" class="custom-file-input" id="foto">
+            <label class="custom-file-label" for="customFile">Subir una foto</label>
+        </div><span><br>
         <br><label for="lname">Sexo:</label><br>
 
         <input type="radio" id="masculino" name="Sexo" value="masculino" checked>
@@ -71,8 +96,17 @@
         <input type="checkbox" id="boletin" checked>
         <labe for="boletin">Suscribirme al boletin de novedades</label> <br>
 
-            <br><input type="submit" value="Enviar datos Introducidos"> <input type="submit" value="Borrar los datos introducidos">
+            <br><input type="submit" value="Enviar datos Introducidos"> <input type="reset" value="Borrar los datos introducidos">
     </form>
+    <br>
+    <br>
 </body>
+
+<script>
+function myFunction() {
+    alert("Este formulario sera enviado!");
+  document.getElementById("field-form").submit();
+}
+</script>
 
 </html>
