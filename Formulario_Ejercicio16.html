@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 16</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
     <style>
-        input[type="text"] {
-            min-width: 100px;
+        #name {
+            width: 300px;
             padding: 0.3em;
             font-size: 1em;
-            margin-top: 2%;
+            --margin-top: 1%;
             border-radius: 3px;
         }
         
@@ -30,6 +32,27 @@
         form {
             width: 100%;
         }
+        
+        #desc {
+            padding: 0em;
+            font-size: 1em;
+            width: 30em;
+            height: 5em;
+            overflow-y: scroll;
+        }
+        
+        legend {
+            font-size: medium;
+        }
+        
+        #field-foto {
+            width: 50%;
+        }
+        
+        body {
+            background-color: rgb(54, 110, 212);
+            color: aliceblue;
+        }
     </style>
 
 
@@ -37,24 +60,32 @@
 
 <body>
 
-    <fieldset id="field-form">
-        <legend>Datos basicos</legend>
+    <fieldset id="field-form" class="form-group border p-3">
+        <legend class="w-auto px-2">
+            <h4>Datos Basicos</h4>
+        </legend>
 
         <form action="/insertar_cv.php" method="post">
             <label for="fname">Nombre</label><br>
-            <input type="text">
-            <label for="fname">Descripcion</label><br>
-            <input type="text">
-            <label for="fname">Descripcion</label> <input type="file">
-            <br> <input type="checkbox"><label for="fname">Añadir contador de visitas</label>
+            <input type="text" id="name"><br><br>
+            <label for="fname">Descripcion</label>
+            <br>
+            <textarea name="" id="desc" cols="20" rows="1"></textarea>
+            <br>
+            <br><span>Foto</span>
+            <div class="custom-file" id="field-foto">
+                <input type="file" class="custom-file-input" id="foto">
+                <label class="custom-file-label" for="customFile">Subir una foto</label>
+            </div><span><br>
+            <br> <input type="checkbox"> <label for="fname">Añadir contador de visitas</label>
 
 
 
         </form>
     </fieldset>
-    <fieldset id="field-form">
+    <fieldset class="form-group border p-3" id="field-form">
 
-        <legend>Datos Economicos</legend>
+        <legend class="w-auto px-2"><h4>Datos Economicos</h4> </legend>
 
         <form action="/insertar_cv.php" method="post">
             <label for="fname">Precio</label> <input type="number" min="0"> <span>€</span> <label for="fname">Impuesto</label> <select name="impuesto" id="impuesto">
