@@ -27,6 +27,16 @@
             padding: 0.5em;
             font-size: 1em;
         }
+        
+        input:valid,
+        textarea:valid {
+            background: green;
+        }
+        
+        input:invalid,
+        textarea:invalid {
+            background: red;
+        }
     </style>
 
 </head>
@@ -46,7 +56,7 @@
         <input type="password" id="pass" name="lname" value="" maxlength="10" placeholder="Introduzca su Contraseña" pattern=".{6,}" title="Debe ingresar de 6 a 10 caracteres"><br><br>
 
         <label for="lname">DNI:</label><br>
-        <input type="text" id="lname" name="lname" value="" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}"><br><br>
+        <input type="text" id="lname" name="lname" value="" placeholder="Introduzca su DNI" pattern="[0-9]{8}[A-Za-z]{1}" required><br><br>
 
         <label for="foto">Incluir mi foto</label> <input type="file" style="visibility: hidden;"> <br>
 
